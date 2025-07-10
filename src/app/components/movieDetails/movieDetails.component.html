@@ -1,0 +1,37 @@
+<div class="modal fade show d-block" tabindex="-1" [ngClass]="{'show':visible}" style="background-color: rgba(0, 0, 0, 0.5);" *ngIf="visible">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+
+            <div class=" container justify-content-between">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <button class="btn btn-secondary" (click)="close()">Go back</button>
+                    </div>
+                    <div class="col-lg-8 modal-title ">
+                        <h5 class="modal-title">What the movie</h5>
+                    </div>
+                    <div class="col-lg-2">
+                        <button class="btn btn-secondary" (click)="close()">Go back</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-body d-flex">
+                <div class="flex-column">
+                    <img [src]="movie?.Poster" class="img-fluid rounded shadow" style="max-width: 200px;"/>
+                </div>
+                <div class="flex-column ps-3">
+                <h3>{{movie.Title}}</h3>
+                <p class=""><strong>Sinopsis:</strong> {{ movie?.Plot }}</p>
+
+                <div class="">
+                    <p><strong>Año:</strong> {{ movie?.Year }}</p>
+                    <p><strong>Genero:</strong> {{ movie?.Genre }}</p>
+                </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-start logo-container">
+  <img src="/assets/images/Logo.svg" alt="Logo" class="logo-img">
+</div>
+<div class="d-flex flex-column align-items-center text-center hero-title">
+  <h1>What movie <br> are you looking for?</h1>
+  <p>Type the name you are looking for and filter by preferences</p>
+</div>
+<div class="d-flex justify-content-center">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="d-flex align-items-center mt-2 mb-3 gap-2">
+        <input type="text" name="search" formControlName="search" placeholder="Browse..." class="form-search"/>
+        <button type="submit" class="btn btn-secondary">Search</button>
+    </form>
+</div>
+
+<!--Filters-->
+<div class="d-flex justify-content-center mt-3 mb-5">
+  <div class="me-4">
+    <select class="sortSelect  filter-list shadow" (change)="onSortChange(sortSelect.value)" #sortSelect>
+      <option value="none">Sin orden</option>
+      <option value="asc">Más antiguo primero</option>
+      <option value="desc">Más reciente primero</option>
+    </select>
+  </div> 
+
+  <div>
+    <select class="genreSelect filter-list shadow" (change)="onGenreChange(genreSelect.value)" #genreSelect>
+      <option value="all">Todos</option>
+      <option *ngFor="let genre of availableGenres" [value]="genre">{{ genre }}</option>
+    </select>
+  </div>
+</div> 
+
+<div *ngIf="!isLoading && paginatedMovies.length > 0 ; else noResults">
+    
+  <div class="row cards">
+    <div
+      class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 px-2 "
+      *ngFor="let movie of paginatedMovies"
+      >
+      <div class="movie-card shadow" (click)="openModal(movie)">
+        <img class="card-img-top" [src]="movie.Poster" [alt]="movie.Title" />
+      </div>
+    </div>
+  </div>
+
+    <app-pagination
+        [currentPage]="currentPage"
+        [totalResults]="totalResults"
+        (pageChanged)="goToPage($event)">
+    </app-pagination>
+
+    <app-movie-details
+        [visible]="ModalVisible"
+        [movie]="selectedMovie"
+        (closeModal)="closeModal()">
+    </app-movie-details>                    
+    
+</div>
+
+<div class="d-flex justify-content-center " *ngIf="isLoading">
+  <div class="spinner"></div>
+</div>
+<ng-template #noResults>
+  <div *ngIf="hasSearched && !isLoading" class="d-flex justify-content-center">
+    <p class="not-found mx-5">We didn't find any results for that name.
+    Even the Force couldn't help us this time. Try something different so we can help you find out <b>what the movie is.</b></p>
+  </div>
+</ng-template>

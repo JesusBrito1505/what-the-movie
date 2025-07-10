@@ -1,0 +1,9 @@
+<div class="pagination d-flex justify-content-center" *ngIf="totalPages > 1">
+  
+    <button class="btn btn-secondary" (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+  
+    <span class="mx-2 mt-1"> Page {{ currentPage }} of {{ totalPages }}</span>
+  
+    <button class="btn btn-secondary" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+
+</div>

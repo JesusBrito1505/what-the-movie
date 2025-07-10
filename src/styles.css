@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'BeVietnamPro';
+  src: url('/assets/fonts/BeVietnamPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BeVietnamPro';
+  src: url('/assets/fonts/BeVietnamPro-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BeVietnamPro';
+  src: url('/assets/fonts/BeVietnamPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgba(12, 12, 12);
+    background-image: radial-gradient(
+        ellipse closest-side at 50% 50%,
+        rgba(246, 88, 19, 0.4) 0%,
+        rgba(246, 88, 19, 0.2) 30%,
+        rgba(12, 12, 12, 1)100%
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    font-family: 'BeVietnamPro', sans-serif;
+}
+
+h1{
+    font-family: 'BeVietnamPro';
+}
+
+.btn{
+    border-radius: 40px;
+    height: 42px;
+    width: 200px;
+    font-weight: bold;
+    font-family: 'BeVietnamPro', sans-serif;
+    background-image: linear-gradient(to bottom, #F87946, #F64E03 );
+    border: #F64E03;
+}

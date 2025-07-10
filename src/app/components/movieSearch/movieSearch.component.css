@@ -1,0 +1,119 @@
+.logo-img{
+    padding: 1rem;
+    width: 200px;
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+    transition: filter 0.3s ease;
+}
+.logo-img:hover{
+    filter: brightness(1.6) drop-shadow(0 0 20px rgba(255, 255, 255, 0.9));
+}
+.hero-title h1{
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: 'BeVietnamPro', sans-serif;
+    background-image: linear-gradient(to right, #FFFFFF, #B8B8B8  );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.hero-title p{
+    color: rgb(184, 184, 184);
+    font-size: 1.6rem;
+}
+.form-search{
+    border-radius: 40px ;
+    width: 612px;
+    height: 42px;
+    background-color: #434343 !important;
+    padding-left: 1.5rem;
+    border: 2px solid #232323;
+    color: #FFFFFF;
+    
+}
+.form-search::placeholder{
+    color: #FFFFFF !important;
+}
+
+/* Fix the white textbox problem */
+input.form-search:-webkit-autofill {
+  background-color: #434343 !important;
+  -webkit-box-shadow: 0 0 0 1000px #434343 inset !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.filter-list{
+    border-radius: 40px;
+    height: 42px;
+    width: 200px;
+    font-weight: bold;
+    font-family: 'BeVietnamPro', sans-serif;
+    background-image: linear-gradient(to bottom, #CDCDCD, #FFFFFF);
+    padding: 0 1rem 0 1rem;
+}
+
+select{
+    background-image:linear-gradient(to bottom, #CDCDCD, #FFFFFF) ;
+}
+.cards{
+    padding: 0 9rem 0 9rem;
+}
+
+.movie-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+}
+
+.movie-card img{
+  aspect-ratio: 2/ 3;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  color: #FFFFFF;
+}
+
+
+@media (max-width: 786px){
+    .form-search{
+        width: 300px;
+    }
+    .hero-title h1{
+        font-size: 3rem;
+    }
+    .hero-title p{
+        font-size: 1rem;
+    }
+}
+
+.not-found{
+    font-size: medium;
+    color: #FFFFFF;
+
+}
+
+b{
+    color: #F87946;
+}
+
+.spinner{
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ccc;
+    border-top: 6px solid #F87946;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

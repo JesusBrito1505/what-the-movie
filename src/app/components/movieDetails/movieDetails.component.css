@@ -1,0 +1,18 @@
+.modal-title{
+    border-radius: 40px;
+    background-color: #434343 ;
+}
+
+.modal-title h3{
+    color: #FFFFFF;
+}
+
+.modal-content{
+    background-color: #252525;
+}
+
+h5, h3, p{
+    color: #FFFFFF;
+}
+
+
