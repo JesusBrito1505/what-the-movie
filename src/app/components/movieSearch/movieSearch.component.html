@@ -16,15 +16,15 @@
 <div class="d-flex justify-content-center mt-3 mb-5">
   <div class="me-4">
     <select class="sortSelect  filter-list shadow" (change)="onSortChange(sortSelect.value)" #sortSelect>
-      <option value="none">Sin orden</option>
-      <option value="asc">Más antiguo primero</option>
-      <option value="desc">Más reciente primero</option>
+      <option value="none">No order</option>
+      <option value="asc">newest first</option>
+      <option value="desc">Lastest first</option>
     </select>
   </div> 
 
   <div>
     <select class="genreSelect filter-list shadow" (change)="onGenreChange(genreSelect.value)" #genreSelect>
-      <option value="all">Todos</option>
+      <option value="all">all</option>
       <option *ngFor="let genre of availableGenres" [value]="genre">{{ genre }}</option>
     </select>
   </div>
