@@ -1,6 +1,7 @@
 .modal-title{
     border-radius: 40px;
-    background-color: #434343 ;
+    background-color: #555151 ;
+    
 }
 
 .modal-title h3{
@@ -15,4 +16,13 @@ h5, h3, p{
     color: #FFFFFF;
 }
 
+header{
+    border-bottom: none !important;
+}
 
+span{
+    color: #434343;
+    border-radius: 40px;
+    background-image: linear-gradient(to bottom, #CDCDCD, #FFFFFF );
+    
+}
