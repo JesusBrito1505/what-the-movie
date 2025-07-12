@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieDetailsService {
 
-  private apiUrl = 'https://www.omdbapi.com/?apikey=69839bdd'
+  private apiUrl = `${environment.apiUrl}?apikey=${environment.apiKey}`
 
   constructor( private http: HttpClient) { }
 

@@ -55,7 +55,7 @@ export class AppComponent implements OnInit{
     this.currentPage = 1;
     this.hasSearched = false;
     this.isLoading = true;
-    this.loadMovies();
+    this.loadMovies();    
   }
 
   loadMovies() {
