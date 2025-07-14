@@ -4,7 +4,7 @@
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
-## Descripcion
+## Description
 
 🎬 **What the Movie** is a responsive web application that allows users to search for movies via the [OMDb API](https://www.omdbapi.com/). Built with Angular and TypeScript, it includes reactive forms, filtering, and sorting features, all wrapped in a clean and responsive UI.
 
@@ -44,39 +44,50 @@
 
 Open console
 
+```bash
 git clone https://github.com/JesusBrito1505/movie-search-app
-
+````
+```bash
 cd movie-search-app
-
+```
 2. Install dependecies:
 
+```bash
 npm install
-
+```
+```bash
 npm install bootstrap
+```
 
 Add bootstrap to angular.json :
 
+```ts
 "styles": [
     "node_modules/bootstrap/dist/css/bootstrap.min.css", 
     "src/styles.css"
     ]
-
+```
 3. Configure the environment:
 
-Sign up into https://www.omdbapi.com/ and get an API Key.
+- Sign up into https://www.omdbapi.com/ and get an API Key.
 
-// src/environments/environment.ts
+- Create a 'environment.ts' and 'environment.development.ts' inside 
+src/environments, it should seems like this: 'src/environments/environment.ts'
 
+- Copy the 'environment.example.ts' into 'environment.ts' and 'environment.development.ts' 
+
+```ts
 export const environment = {
   production: false,
   apiUrl: 'https://www.omdbapi.com/',
   apiKey: 'YOUR_API_KEY_AQUI'
 };
-
+```
 4. Execute the application:
 
+```bash
 ng serve
-
+```
 Open http://localhost:4200 in your browser
 
 ---
