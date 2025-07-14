@@ -51,6 +51,7 @@ cd movie-search-app
 2. Install dependecies:
 
 npm install
+
 npm install bootstrap
 
 Add bootstrap to angular.json :
