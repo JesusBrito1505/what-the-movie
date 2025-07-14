@@ -24,7 +24,7 @@
 
   <div>
     <select class="genreSelect filter-list shadow" (change)="onGenreChange(genreSelect.value)" #genreSelect>
-      <option value="all">all</option>
+      <option value="all">All</option>
       <option *ngFor="let genre of availableGenres" [value]="genre">{{ genre }}</option>
     </select>
   </div>

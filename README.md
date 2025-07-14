@@ -1,59 +1,98 @@
-# Movies
+# What the movie
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
-## Development server
+## Descripcion
 
-To start a local development server, run:
+🎬 **What the Movie** is a responsive web application that allows users to search for movies via the [OMDb API](https://www.omdbapi.com/). Built with Angular and TypeScript, it includes reactive forms, filtering, and sorting features, all wrapped in a clean and responsive UI.
 
-```bash
+--- 
+
+## Tech stack
+
+- Angular 19
+- Html5
+- CSS3
+- Bootstrap
+- TypeScript
+
+---
+
+## Functionalities
+
+- Search movie by title
+- Order by date 
+- Filter by Genre
+
+---
+
+## Angular Features used
+
+- Use of Angular lifecycle
+- HTTP calls
+- Reactive forms
+- Responsive design
+- Rxjs
+
+---
+
+## How to install: 
+
+1. Copy the repository:
+
+Open console
+
+git clone https://github.com/JesusBrito1505/movie-search-app
+
+cd movie-search-app
+
+2. Install dependecies:
+
+npm install
+npm install bootstrap
+
+Add bootstrap to angular.json :
+
+"styles": [
+    "node_modules/bootstrap/dist/css/bootstrap.min.css", 
+    "src/styles.css"
+    ]
+
+3. Configure the environment:
+
+Sign up into https://www.omdbapi.com/ and get an API Key.
+
+// src/environments/environment.ts
+
+export const environment = {
+  production: false,
+  apiUrl: 'https://www.omdbapi.com/',
+  apiKey: 'YOUR_API_KEY_AQUI'
+};
+
+4. Execute the application:
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open http://localhost:4200 in your browser
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```bash
-ng generate component component-name
-```
+## Screenshoots
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
+| Before Search | After search |
+|------------|------------|
+| ![](public/assets/images/Screenshot-before-search.png) | ![](public/assets/images/Screenshot-after-search.png) |
+| No data found | Movie details |
+| ![](public/assets/images/Screenshot-no-data-found.png) | ![](public/assets/images/Screenshot-movie-details.png) |
 
-## Building
 
-To build the project run:
+## Autor:
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Jesus Brito – @JesusBrito1505
+📩 email@JesusBrito.Dev
+💼 JesusEbrito
