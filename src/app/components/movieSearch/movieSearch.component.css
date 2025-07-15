@@ -23,25 +23,55 @@
     font-size: 1.6rem;
 }
 .form-search{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.input-container{
+    flex: 0 1 612px;
+    width: 100%;
+    margin: 0 1rem 0 1rem !important;
+    
+
+}
+.textbox-search{
     border-radius: 40px ;
-    width: 612px;
+    width: 100%;
+    max-width: 612px !important;
+    min-width: 200px;
     height: 42px;
     background-color: #434343 !important;
     padding-left: 1.5rem;
     border: 2px solid #232323;
-    color: #FFFFFF;
-    
+    color: #FFFFFF;    
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 300px;
+    margin-bottom: 0;
 }
-.form-search::placeholder{
+.textbox-search::placeholder{
     color: #FFFFFF !important;
 }
 
+.search-button{
+    flex-shrink: 0;
+    margin-top: 0;
+}
+
 /* Fix the white textbox problem */
-input.form-search:-webkit-autofill {
+input.textbox-search:-webkit-autofill {
   background-color: #434343 !important;
   -webkit-box-shadow: 0 0 0 1000px #434343 inset !important;
   -webkit-text-fill-color: #FFFFFF !important;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+.filter-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 0 0 0;
 }
 
 .filter-list{
@@ -52,21 +82,29 @@ input.form-search:-webkit-autofill {
     font-family: 'BeVietnamPro', sans-serif;
     background-image: linear-gradient(to bottom, #CDCDCD, #FFFFFF);
     padding: 0 1rem 0 1rem;
+    margin: 1rem 1rem 0 1rem;
 }
+
 
 select{
     background-image:linear-gradient(to bottom, #CDCDCD, #FFFFFF) ;
 }
-.cards{
-    padding: 0 9rem 0 9rem;
+.cards-container{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .movie-card {
   border-radius: 12px;
+  width: 100%;
+  max-width: 200px;
+  min-width: 160px;
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
-  
+  margin:auto;
+
 }
 
 .movie-card:hover {
@@ -82,10 +120,8 @@ select{
 }
 
 
-@media (max-width: 786px){
-    .form-search{
-        width: 300px;
-    }
+@media (max-width: 801.98px){
+    
     .hero-title h1{
         font-size: 3rem;
     }
@@ -117,3 +153,4 @@ b{
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+

@@ -5,16 +5,20 @@
   <h1>What movie <br> are you looking for?</h1>
   <p>Type the name you are looking for and filter by preferences</p>
 </div>
-<div class="d-flex justify-content-center">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="d-flex align-items-center mt-2 mb-3 gap-2">
-        <input type="text" name="search" formControlName="search" placeholder="Browse..." class="form-search"/>
-        <button type="submit" class="btn btn-secondary">Search</button>
+
+<div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-search">
+      <div class="input-container">
+        <input type="text" name="search" formControlName="search" placeholder="Browse..." class="textbox-search"/>
+      </div>
+        <button type="submit" class="btn btn-secondary search-button">Search</button>
     </form>
 </div>
 
 <!--Filters-->
-<div class="d-flex justify-content-center mt-3 mb-5">
-  <div class="me-4">
+<div class="filter-container">
+  
+  <div>
     <select class="sortSelect  filter-list shadow" (change)="onSortChange(sortSelect.value)" #sortSelect>
       <option value="none">No order</option>
       <option value="asc">newest first</option>
@@ -32,9 +36,9 @@
 
 <div *ngIf="!isLoading && paginatedMovies.length > 0 ; else noResults">
     
-  <div class="row cards">
+  <div class="cards-container mt-5 p-5">
     <div
-      class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 px-2 "
+      class="mb-4 px-2 "
       *ngFor="let movie of paginatedMovies"
       >
       <div class="movie-card shadow" (click)="openModal(movie)">
@@ -57,12 +61,12 @@
     
 </div>
 
-<div class="d-flex justify-content-center " *ngIf="isLoading">
+<div class="d-flex justify-content-center mt-5" *ngIf="isLoading">
   <div class="spinner"></div>
 </div>
 <ng-template #noResults>
   <div *ngIf="hasSearched && !isLoading" class="d-flex justify-content-center">
-    <p class="not-found mx-5">We didn't find any results for that name.
+    <p class="not-found mx-5 mt-5">We didn't find any results for that name.
     Even the Force couldn't help us this time. Try something different so we can help you find out <b>what the movie is.</b></p>
   </div>
 </ng-template>

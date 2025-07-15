@@ -1,3 +1,8 @@
 span{
-    color: rgb(255, 255, 255);
+    color: #ffffff;
+    border-radius: 40px;
+    padding: 0.3rem 1rem 0 1rem;
+    background-image: linear-gradient(to bottom, #F87946, #F64E03 );
+
+    
 }
