@@ -13,7 +13,7 @@
 ## Tech stack
 
 - Angular 19
-- Html5
+- Html
 - CSS3
 - Bootstrap
 - TypeScript
