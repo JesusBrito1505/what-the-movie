@@ -24,5 +24,24 @@ span{
     color: #434343;
     border-radius: 40px;
     background-image: linear-gradient(to bottom, #CDCDCD, #FFFFFF );
-    
+    padding-right: 4rem;
+}
+
+.title-container{
+    margin-left: .5rem;
+}
+
+div + button{
+    margin-left: 0.5rem;
+}
+
+img{
+    max-width: 200px;
+    max-height: 300px;
+}
+
+@media  ( max-width: 768px) {
+    .title-container{
+        display: none !important;
+    }
 }
