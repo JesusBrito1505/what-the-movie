@@ -1,6 +1,14 @@
 <div class="d-flex justify-content-start logo-container">
   <img src="/assets/images/Logo.svg" alt="Logo" class="logo-img">
+  <button (click)="openModalList()" class="btn btn-secondary shadow list-button"> My List</button>
 </div>
+
+<app-watch-later
+  [modalListVisible]="modalListVisible"
+  [watchLaterList]="whatchLaterList"
+  (closeModalList)="closeModalList()">
+</app-watch-later>
+
 <div class="d-flex flex-column align-items-center text-center hero-title">
   <h1>What movie <br> are you looking for?</h1>
   <p>Type the name you are looking for and filter by preferences</p>
@@ -38,7 +46,7 @@
     
   <div class="cards-container mt-5 p-5">
     <div
-      class="mb-4 px-2 "
+      class="mb-4 px-2"
       *ngFor="let movie of paginatedMovies"
       >
       <div class="movie-card shadow" (click)="openModal(movie)">
@@ -56,8 +64,9 @@
     <app-movie-details
         [visible]="ModalVisible"
         [movie]="selectedMovie"
-        (closeModal)="closeModal()">
-    </app-movie-details>                    
+        (closeModal)="closeModal()"
+        (addToWatchLater)="addToWatchLater(selectedMovie)">
+    </app-movie-details>   
     
 </div>
 

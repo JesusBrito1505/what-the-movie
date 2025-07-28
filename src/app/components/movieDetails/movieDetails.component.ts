@@ -14,8 +14,13 @@ export class MovieDetailsComponent {
   @Input() visible: boolean = false;
 
   @Output() closeModal = new EventEmitter<void>();
+  @Output() addToWatchLater = new EventEmitter<void>();
 
   close(){
     this.closeModal.emit();
+  }
+
+  addToList(){
+    this.addToWatchLater.emit();
   }
 }

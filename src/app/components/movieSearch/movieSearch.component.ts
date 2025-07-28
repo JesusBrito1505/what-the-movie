@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { CommonModule} from '@angular/common';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, FormBuilder} from '@angular/forms';
 import { forkJoin } from 'rxjs';
 import { MoviesService } from '../../services/movies.service';
@@ -7,12 +7,13 @@ import { PaginationComponent } from '../pagination/pagination.component';
 import { MovieDetailsComponent } from '../movieDetails/movieDetails.component';
 import { MovieDetailsService } from '../../services/movieDetails/movieDetails.service';
 import { MovieFilterService } from '../../services/movieFilter/movieFilter.service';
+import { WatchLaterComponent } from "../watchLater/watchLater.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, PaginationComponent, MovieDetailsComponent],
+  imports: [ReactiveFormsModule, CommonModule, PaginationComponent, MovieDetailsComponent, WatchLaterComponent],
   templateUrl: './movieSearch.component.html',
   styleUrl: './movieSearch.component.css'
 })
@@ -37,6 +38,9 @@ export class AppComponent implements OnInit{
 
   hasSearched: boolean = false;
   isLoading: boolean = false;
+  
+  @Input() whatchLaterList: Set<any> = new Set();
+  modalListVisible: boolean = false;
 
   constructor(
     private fb: FormBuilder, 
@@ -153,8 +157,27 @@ export class AppComponent implements OnInit{
     });
   }
 
+  openModalList(){
+    this.modalListVisible = true;
+    console.log('Opened')
+  }
+
   closeModal(){
     this.ModalVisible = false;
   }
 
+  closeModalList(){
+    this.modalListVisible = false;
+    console.log('closed');
+    
+  }
+
+  addToWatchLater( movie: any){
+    this.whatchLaterList.add(movie);
+    console.log('List:', this.whatchLaterList)
+  }
+
+  getWatchLaterList(): Set<any>{
+    return this.whatchLaterList;
+  }
 }
