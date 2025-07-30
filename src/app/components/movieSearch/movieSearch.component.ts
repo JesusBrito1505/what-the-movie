@@ -8,6 +8,7 @@ import { MovieDetailsComponent } from '../movieDetails/movieDetails.component';
 import { MovieDetailsService } from '../../services/movieDetails/movieDetails.service';
 import { MovieFilterService } from '../../services/movieFilter/movieFilter.service';
 import { WatchLaterComponent } from "../watchLater/watchLater.component";
+import { WatchLaterService } from '../../services/watchLater/watch-later.service';
 
 
 @Component({
@@ -39,20 +40,23 @@ export class AppComponent implements OnInit{
   hasSearched: boolean = false;
   isLoading: boolean = false;
   
-  @Input() whatchLaterList: Set<any> = new Set();
+  @Input() watchLaterList: any[] = [];
   modalListVisible: boolean = false;
 
   constructor(
     private fb: FormBuilder, 
     private movieService: MoviesService, 
     private movieDetailsService : MovieDetailsService,
-    private movieFilterService : MovieFilterService
+    private movieFilterService : MovieFilterService,
+    private watchLaterService : WatchLaterService
   ) {}
 
   ngOnInit(){
     this.form = this.fb.group({
       search: [''],
     });
+
+    this.watchLaterList = this.watchLaterService.getList();
   }
 
   onSubmit(){
@@ -173,11 +177,12 @@ export class AppComponent implements OnInit{
   }
 
   addToWatchLater( movie: any){
-    this.whatchLaterList.add(movie);
-    console.log('List:', this.whatchLaterList)
+    this.watchLaterService.add(movie);
+    this.watchLaterList = this.watchLaterService.getList(); 
+    console.log(localStorage.getItem('watchLater'))
   }
 
-  getWatchLaterList(): Set<any>{
-    return this.whatchLaterList;
+  getWatchLaterList(): any[]{
+    return this.watchLaterList;
   }
 }

@@ -25,7 +25,7 @@
                             *ngFor="let genre of movie?.Genre?.split(',')">{{ genre.trim()}}</span>
                         </div>
 
-                        <button class="remove-button btn btn-secondary">Remove</button>
+                        <button class="remove-button btn btn-secondary" (click)="removeFromWatchLater(movie?.imdbID)">Remove</button>
                     </div>
                 </div>
             </div>
