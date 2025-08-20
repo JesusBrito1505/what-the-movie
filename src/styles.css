@@ -46,4 +46,11 @@ h1{
     font-family: 'BeVietnamPro', sans-serif;
     background-image: linear-gradient(to bottom, #F87946, #F64E03 );
     border: #F64E03;
+    transition: 0.2s;
+}
+
+.btn:hover, .btn:focus{
+  background-image: none;
+  background-color: transparent;
+  box-shadow: 0 0 0 2px #F64E03;
 }
